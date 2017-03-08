@@ -65,14 +65,14 @@ $GLOBALS['alchemy_url']='https://gateway-a.watsonplatform.net/calls';
    Here based on the master request id, the response will be stored in Child table by function **getNewsParsedDataFromJSONResponse($masterId)**.
 
 
-#### Step 10:
+#### Step 11:
 To get the Master list function **getMasterNewsDataFromMySQL** will be called from index.php to controller.
 
 - Function **getAllNewsMasterDataFromMySQL** will be called from controller to action.
 - In action, MySQL connection will be set and based on the query it will get the master list table records.
 - The result list will be returned to controller.
    
-#### Step 11:
+#### Step 12:
    To view the Master list function **showExtractedMasterListView($list)** will be called from controller to View.
    
 **_Code:_**
@@ -88,7 +88,7 @@ To get the Master list function **getMasterNewsDataFromMySQL** will be called fr
     
 ``` 
 
-#### Step 12:
+#### Step 13:
    To view the Child data based on the master id, function **getAlchemyNewsChildDataFromMySQL($post_data)** will be called from index.php to controller.
    
    - Function **getAllNewsChildDataFromMySQL($post_data)** will get the records based on the master id using MySql query. 
