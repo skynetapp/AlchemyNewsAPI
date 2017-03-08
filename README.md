@@ -32,7 +32,7 @@ $GLOBALS['alchemy_url']='https://gateway-a.watsonplatform.net/calls';
 	
   
 #### Step 2:
-  Create a module name as 'alchemyNews' in index.php and respective actions will be performed accordingly.
+  Create a module name as **alchemyNews** in index.php and respective actions will be performed accordingly.
   
 #### Step 3:
    In the server normally we will be able to see News form by running the url -  http://159.203.239.91/bluemix2.0/index.php?module=alchemyNews&action=AddList with the following fields.
