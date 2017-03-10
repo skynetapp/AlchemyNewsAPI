@@ -13,6 +13,13 @@ Lib | Smarty,Common functions,AlchemyAPI | |
 Modules | AlchemyNews | Alchemy News Controller, Alchemy News Action, Alchemy News MySql, Alchemy News View, Alchemy News DB Mongo|
 Views | AlchemyNews | header.tpl, footer.tpl(Common files), alchemyNewsForm.tpl, alchemyNewsmasterList.tpl, alchemyNewsdetailList.tpl|
 
+#### Architecture
+
+1. Submit the news form with start date, end date, keyword and type.
+2. Invoke Watson by calling Alchemy API (entities) which calls the **api key** and gets response from API by news url.
+3. The response is processed and updated in Parent Table (alchemy_news_master) and the corresponding children are stored in child table name (alchemy_news_child). 
+4. The raw response from Watson is also stored in MongoDB (lytepole) as raw JSON file.
+
 #### Code Flows as follows:
    * To insert or get data from DB code flows.. index.php -> Controller -> Action -> MySql.
    * To view the data code flows.. index.php -> Controller -> View.
@@ -129,6 +136,13 @@ alchemy_news_child | Stores the child records based on master id | child_id, mas
 #### Mongo Database details
  
 Database Name: lytepole
+Description: Mongo stores the JSON response given by the Alchemy API for all the records.
+
+- To start the mongoDB, open command prompt.
+- change the path where mongo is installed.
+- To start the MongoDB service - **net start MongoDB**.
+- To display the database, type **db**. It will return **test** as default database. To use our database type ** use dbname **.
+- To stop the MongoDB service - **net stop MongoDB**.
  
  
 
