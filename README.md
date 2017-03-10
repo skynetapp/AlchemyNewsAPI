@@ -20,6 +20,7 @@ Views | AlchemyNews | header.tpl, footer.tpl(Common files), alchemyNewsForm.tpl,
 3. The response is processed and updated in Parent Table (alchemy_news_master) and the corresponding children are stored in child table name (alchemy_news_child). 
 4. The raw response from Watson is also stored in MongoDB (lytepole) as raw JSON file.
 
+
 #### Code Flows as follows:
    * To insert or get data from DB code flows.. index.php -> Controller -> Action -> MySql.
    * To view the data code flows.. index.php -> Controller -> View.
@@ -101,9 +102,11 @@ To get the Master list function **getMasterNewsDataFromMySQL** will be called fr
    - Function **getAllNewsChildDataFromMySQL($post_data)** will get the records based on the master id using MySql query. 
    - Function **showDetailNewsListView($alchemy_list_vo)** will be called in view. 
    
+   
 #### Assumptions
 
 - DBMongo - Inserts the Alchemy JSON response into mongo. It is included in Global -> DBMongo.
+
 
 #### Errors
 
@@ -135,8 +138,9 @@ alchemy_news_child | Stores the child records based on master id | child_id, mas
  
 #### Mongo Database details
  
-Database Name: lytepole
-Description: Mongo stores the JSON response given by the Alchemy API for all the records.
+- Database Name: lytepole
+- Table or collection name : BlueMixEntityExtract 
+- Description: Mongo stores the JSON response given by the Alchemy API for all the records.
 
 - To start the mongoDB, open putty.
 - To start the MongoDB service type command - **mongo**.
